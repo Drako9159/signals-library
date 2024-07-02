@@ -20,7 +20,7 @@ export class ServiceManager<T extends { [K in keyof T]: any }> {
   getSignal<U extends T[keyof T]>(key: keyof T): Signal<U> {
     const foundSignal = this.signalsCollection.get(key);
     if (!foundSignal) {
-      throw new Error(`Signal ${String(key)} found`);
+      throw new Error(`Signal ${String(key)} not found`);
     }
     return foundSignal;
   }
