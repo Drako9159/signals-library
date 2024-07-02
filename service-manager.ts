@@ -1,16 +1,32 @@
-import { Signal, SignalsAdapter, SignalsDomain } from "./domains";
+import { Signal, SignalsAdapter } from "./domains";
 
 export class ServiceManager<T extends { [K in keyof T]: any }> {
   // global state
-  signalsCollection = new Map<string, Signal<T[keyof T]>>();
-  
+  signalsCollection = new Map<keyof T, Signal<T[keyof T]>>();
+  signalsAdapter: SignalsAdapter<T>;
 
-  constructor(private signalsAdapter: SignalsAdapter<T>) {}
-  createSignal(payload: T[keyof T]) {
-    return this.signalsAdapter.createSignal(payload);
+  constructor(defaultState: T) {
+    this.signalsAdapter = new SignalsAdapter();
+
+    // aggregate for each key value, create signal and add to collection
+    for (const key in defaultState) {
+      this.signalsCollection.set(
+        key,
+        this.signalsAdapter.createSignal(defaultState[key])
+      );
+    }
   }
 
-  updateSignal(signal: Signal<T[keyof T]>, payload: T[keyof T]) {
-    this.signalsAdapter.updateSignal(signal, payload);
+  getSignal<U extends T[keyof T]>(key: keyof T): Signal<U> {
+    const foundSignal = this.signalsCollection.get(key);
+    if (!foundSignal) {
+      throw new Error(`Signal ${String(key)} found`);
+    }
+    return foundSignal;
+  }
+
+  updateSignal(key: keyof T, payload: T[keyof T]) {
+    const foundSignal = this.getSignal(key);
+    this.signalsAdapter.updateSignal(foundSignal, payload);
   }
 }
