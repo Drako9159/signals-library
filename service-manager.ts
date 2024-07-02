@@ -1,6 +1,6 @@
 import { Signal, SignalsAdapter } from "./domains";
 
-export class ServiceManager<T extends { [K in keyof T]: any }> {
+export class SignalsManager<T extends { [K in keyof T]: any }> {
   // global state
   signalsCollection = new Map<keyof T, Signal<T[keyof T]>>();
   signalsAdapter: SignalsAdapter<T>;
