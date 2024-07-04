@@ -1,0 +1,3 @@
+
+// lib generator / export generator
+bun create wobsoriano/bun-lib-starter ./my-lib

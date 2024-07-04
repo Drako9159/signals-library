@@ -6,7 +6,7 @@ export class SignalsManager<T extends { [K in keyof T]: any }> {
   signalsAdapter: SignalsAdapter<T>;
 
   constructor(defaultState: T) {
-    this.signalsAdapter = new SignalsAdapter();
+    this.signalsAdapter = new SignalsAdapter<T>();
 
     // aggregate for each key value, create signal and add to collection
     for (const key in defaultState) {
