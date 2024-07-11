@@ -1,1 +1,1 @@
-export * from "./signals-adapter"
+export * from "./signals-adapter";

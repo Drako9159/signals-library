@@ -1,2 +1,2 @@
-export * from "./adapters"
-export * from "./service-domain"
+export * from "./adapters";
+export * from "./service-domain";
