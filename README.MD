@@ -90,13 +90,4 @@ Update a signal in the manager, use the updateSignal method
 ````Typescript
 signalsManager.updateSignal("propertyName", payload)
 ````
-Implementation
-
-````Typescript
-
-````
-
-
-
-
 
