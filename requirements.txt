@@ -4,3 +4,5 @@ bun create wobsoriano/bun-lib-starter ./my-lib
 
 // run test
 bun test
+
+// for load package to npm update version number
