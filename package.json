@@ -6,7 +6,8 @@
   "description": "",
   "scripts": {
     "build": "bun run build.mjs",
-    "prepublishOnly": "bun run build"
+    "prepublishOnly": "bun run build",
+    "test": "bun test"
   },
   "files": [
     "dist"
