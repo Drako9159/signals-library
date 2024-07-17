@@ -1,6 +1,6 @@
 {
-  "name": "my-lib",
-  "version": "0.0.0",
+  "name": "drako9159-agnostic-signals",
+  "version": "0.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "description": "",
@@ -16,13 +16,13 @@
     "bun"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/wobsoriano/pkg-name#readme",
+  "homepage": "https://github.com/Drako9159/signals-library",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wobsoriano/pkg-name.git"
+    "url": "git+https://github.com/Drako9159/signals-library.git"
   },
-  "bugs": "https://github.com/wobsoriano/pkg-name/issues",
-  "author": "Robert Soriano <sorianorobertc@gmail.com>",
+  "bugs": "https://github.com/Drako9159/signals-library/issues",
+  "author": "Antonio Jaramillo <antonio.jar.dev@gmail.com>",
   "devDependencies": {
     "@types/bun": "^1.0.0",
     "bun-plugin-dts": "^0.2.1",
