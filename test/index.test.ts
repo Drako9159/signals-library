@@ -11,7 +11,6 @@ describe("should", () => {
 
   type DefaultState = SignalsState<{ [StateProperties.COUNT ]: number }>;
 
-
   const defaultState: SignalsState<DefaultState> = {
     count: 0
   };
