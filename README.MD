@@ -70,7 +70,7 @@ type DefaultState = SignalsState<{ [StateProperties.COUNT]: number }>;
 // Define your default state
 const defaultState: SignalsState<DefaultState> = {
     // Define your state properties here with their default values
-    count: 0,
+    StateProperties.COUNT: 0,
 }
 
 // Initialize the Signals Manager
